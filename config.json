@@ -1,0 +1,46 @@
+{
+  "timeout": 90,
+  "mcpServers": {
+    "email-security-scanner": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/opt/maritime/email-security-mcp",
+        "run",
+        "python",
+        "server.py"
+      ],
+      "env": {
+        "UV_SYSTEM_PYTHON": "1"
+      }
+    },
+    "spiderfoot": {
+      "command": "uv",
+      "args": ["run", "--directory", "/opt/maritime/spiderfoot-mcp", "server.py"],
+      "env": {
+        "SPIDERFOOT_URL": "https://spiderfoot.server.com",
+        "SPIDERFOOT_USERNAME": "user",
+        "SPIDERFOOT_PASSWORD": "password"
+      }
+    },
+    "bbot": {
+      "command": "uv",
+      "args": ["run", "--directory", "/opt/maritime/bbot-mcp", "bbot_mcp_server.py"]
+    },
+    "shodan": {
+      "command": "node",
+      "args": ["/opt/maritime/mcp-shodan/build/index.js"],
+      "env": {
+        "SHODAN_API_KEY": "your-shodan-key"
+      }
+    },
+    "zoomeye": {
+      "command": "/opt/maritime/zoomeye-mcp/mcp-server-zoomeye",
+      "env": {
+        "ZOOMEYE_API_KEY": "your-zoomeye-key"
+      }
+    }
+
+  }
+}
+
