@@ -6,8 +6,8 @@
       "args": [ "--refresh", "basicsec-mcp"]
     },
     "spiderfoot": {
-      "command": "uv",
-      "args": ["run", "--directory", "/opt/maritime/spiderfoot-mcp", "server.py"],
+      "command": "uvx",
+      "args": ["--refresh", "spiderfoot-mcp"],
       "env": {
         "SPIDERFOOT_URL": "https://spiderfoot.server.com",
         "SPIDERFOOT_USERNAME": "user",
