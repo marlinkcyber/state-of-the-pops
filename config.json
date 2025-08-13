@@ -1,18 +1,9 @@
 {
   "timeout": 90,
   "mcpServers": {
-    "email-security-scanner": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/opt/maritime/email-security-mcp",
-        "run",
-        "python",
-        "server.py"
-      ],
-      "env": {
-        "UV_SYSTEM_PYTHON": "1"
-      }
+    "basicsec": {
+      "command": "uvx",
+      "args": [ "--refresh", "basicsec-mcp"]
     },
     "spiderfoot": {
       "command": "uv",
@@ -24,8 +15,8 @@
       }
     },
     "bbot": {
-      "command": "uv",
-      "args": ["run", "--directory", "/opt/maritime/bbot-mcp", "bbot_mcp_server.py"]
+      "command": "uvx",
+      "args": ["--refresh", "bbot-mcp"]
     },
     "shodan": {
       "command": "node",
@@ -40,7 +31,6 @@
         "ZOOMEYE_API_KEY": "your-zoomeye-key"
       }
     }
-
   }
 }
 
